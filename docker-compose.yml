@@ -12,6 +12,7 @@ services:
 
   graf:
     image: pratham17/graf:v2
+    container_name: grafs-1
     networks:
       my_network:
         ipv4_address: 172.18.0.3
@@ -22,7 +23,7 @@ services:
     image: pratham17/jenkins:v9
     ports:
       - "8084:8080"
-    container_name: jenk-host
+    container_name: jenk-1
     networks:
       my_network:
         ipv4_address: 172.18.0.4
