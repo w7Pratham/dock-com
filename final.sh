@@ -14,5 +14,6 @@ docker exec jenk-1 sh -c """
     npm install --global smee-client
     smee --url https://smee.io/HjVfbSqXepu2LX --path /github-webhook/ --port 8080 &
 """
+
 # docker exec proms-1 sh -c "nohup /root/proms/prometheus --config.file=/root/proms/prometheus.yml &"
 # docker exec proms-1 sh -c "nohup /root/alerts/alertmanager --config.file=/root/alerts/alertmanager.yml &"
