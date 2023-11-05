@@ -20,7 +20,7 @@ services:
       - "3000:3000"  # Map container port 3000 to host port 3000
 
   jenk:
-    image: pratham17/jenkins:v10
+    image: pratham17/jenkins:v12
     ports:
       - "8084:8080"
     container_name: jenk-1
@@ -30,7 +30,7 @@ services:
     entrypoint: /entrypoint.sh
 
   apps:
-    image: pratham17/apps:v1
+    image: pratham17/apps:v2
     ports:
       - "5001:5001"
     networks:
