@@ -1,0 +1,19 @@
+version: '3'
+services:
+  prom:
+    image: pratham17/prom:v11
+    container_name: proms-1
+    networks:
+      my_network:
+        ipv4_address: 172.18.0.2
+    entrypoint: /root/entrypoint.sh
+    ports:
+      - "9090:9090"  # Map container port 9090 to host port 9090
+
+networks:
+  my_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/24
