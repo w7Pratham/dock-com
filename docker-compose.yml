@@ -1,41 +1,33 @@
 version: '3'
 services:
   prom:
-    image: pratham17/prom:v11
+    image: pratham17/prom:v12
     container_name: proms-1
     networks:
       my_network:
         ipv4_address: 172.18.0.2
     entrypoint: /root/entrypoint.sh
     ports:
-      - "9090:9090"  # Map container port 9090 to host port 9090
-
-  graf:
-    image: pratham17/graf:v2
-    container_name: grafs-1
-    networks:
-      my_network:
-        ipv4_address: 172.18.0.3
-    ports:
-      - "3000:3000"  # Map container port 3000 to host port 3000
+      - "9090:9090"
+      - "3000:3000"  # Map container port 9090 to host port 9090
 
   jenk:
-    image: pratham17/jenkins:v10
+    image: pratham17/jenkins:v13
     ports:
       - "8084:8080"
     container_name: jenk-1
     networks:
       my_network:
-        ipv4_address: 172.18.0.4
+        ipv4_address: 172.18.0.3
     entrypoint: /entrypoint.sh
 
   apps:
-    image: pratham17/apps:v1
+    image: pratham17/apps:v3
     ports:
       - "5001:5001"
     networks:
       my_network:
-        ipv4_address: 172.18.0.5
+        ipv4_address: 172.18.0.4
     container_name: apps-host
     entrypoint: /entrypoint.sh
 
