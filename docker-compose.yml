@@ -9,8 +9,7 @@ services:
     entrypoint: /root/entrypoint.sh
     ports:
       - "9090:9090"
-      - "3000:3000"  # Map container port 9090 to host port 9090
-
+      - "3000:3000"
   jenk:
     image: pratham17/jenkins:v13
     ports:
