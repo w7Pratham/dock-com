@@ -13,6 +13,7 @@ docker exec jenk-1 sh -c """
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" && \
     npm install --global smee-client && \
-    echo "-"
-    nohup smee --url https://smee.io/HjVfbSqXepu2LX --path /github-webhook/ --port 8080 &
+    sleep 10s && \
+    echo "-" && \
+    nohup smee --url https://smee.io/HjVfbSqXepu2LX --path /github-webhook/ --port 8080
 """
