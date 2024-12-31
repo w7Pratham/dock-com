@@ -11,7 +11,7 @@ receivers:
        from: aethergen36@gmail.com
        smarthost: smtp.gmail.com:587
        auth_username: aethergen36@gmail.com
-       auth_password: uzmt aajz hsse iodq
+       auth_password: <Please_input_key>
        require_tls: true
 inhibit_rules:
   - source_match:
